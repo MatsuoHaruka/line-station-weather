@@ -25,6 +25,7 @@
                             <outlet property="delegate" destination="ZJZ-u9-oWq" id="KJO-82-Jm6"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="qSF-xe-jE1"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="cvn-kZ-wHP" kind="show" id="W0Q-BG-t3D"/>
@@ -56,6 +57,9 @@
                         </connections>
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="show" id="ouS-Qe-5Td"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9h-Mm-Gbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -120,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1.5" y="405.5"/>
+            <point key="canvasLocation" x="20.5" y="493.5"/>
         </scene>
         <!--Cell View Controller-->
         <scene sceneID="18P-SC-UmH">
@@ -168,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nc0-IZ-bAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506.5" y="405.5"/>
+            <point key="canvasLocation" x="508.5" y="493.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iVZ-qQ-t84">
@@ -180,12 +184,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="5Vb-PM-5vM"/>
+                        <segue destination="ZJZ-u9-oWq" kind="relationship" relationship="rootViewController" id="Sr2-cP-Ku7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRw-S5-Lz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-488.5" y="405.5"/>
+            <point key="canvasLocation" x="-661.5" y="-328.5"/>
         </scene>
     </scenes>
 </document>
