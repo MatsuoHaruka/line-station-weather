@@ -27,7 +27,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     
     
-//    makeDate
+//   MARK: makeDate
     func makeDate(){
         var url = NSURL(string: self.urlString)!
         var task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: {data, response, error in
