@@ -123,9 +123,10 @@ class TrainTableViewController: UITableViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if (segue.identifier == "toTrainViewController"){
-            let trainViewController : TrainTableViewController = segue.destinationViewController as! TrainTableViewController
+            let nextTrainTableViewController : NextTrainTableViewController = segue.destinationViewController as! NextTrainTableViewController
             
-            trainViewController.line = selectedline}
+            nextTrainTableViewController.line = selectedline
+        }
     
     }
 }

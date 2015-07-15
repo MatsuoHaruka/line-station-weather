@@ -9,6 +9,12 @@
 import UIKit
 
 class NextTrainTableViewController: UITableViewController {
+    
+    @IBOutlet var myTableView: UITableView!
+    var line : String?
+    var array = Array<NSDictionary>()
+    var urlString : String?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +24,34 @@ class NextTrainTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let manager = AFHTTPRequestOperationManager()
+        
+        let urlstring1 = "http://express.heartrails.com/api/json?method=getStations&line="
+        let urlstring2 = "\(line!)"
+        self.urlString = urlstring1 + urlstring2.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        println(self.urlString!)
+        
+        manager.GET(self.urlString!, parameters: nil,
+            success: {(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) in
+                println("success!!")
+                println(responsobject)
+                
+                let dic : NSDictionary = responsobject as! NSDictionary
+                
+                self.array = dic.objectForKey("response")?.objectForKey("station") as! Array
+                
+                
+                println(self.array)
+                
+                self.myTableView.reloadData()
+                
+            },
+            failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error!!")
+                println(self.urlString!)
+        })
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,18 +70,22 @@ class NextTrainTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.array.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
+        let station : NSDictionary = self.array[indexPath.row]
+        let stationName : String? = station.objectForKey("name") as? String
+        
+        cell.textLabel?.text = stationName
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
