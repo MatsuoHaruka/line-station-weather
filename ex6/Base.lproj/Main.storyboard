@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Train Table View Controller-->
         <scene sceneID="5Eb-Mt-sh1">
             <objects>
-                <tableViewController id="ZJZ-u9-oWq" sceneMemberID="viewController">
+                <tableViewController id="ZJZ-u9-oWq" customClass="TrainTableViewController" customModule="ex6" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="nqZ-Tn-BLR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="-219.5" y="-328.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Next Train Table View Controller-->
         <scene sceneID="Sih-Xf-E6Y">
             <objects>
-                <tableViewController id="cvn-kZ-wHP" sceneMemberID="viewController">
+                <tableViewController id="cvn-kZ-wHP" customClass="NextTrainTableViewController" customModule="ex6" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9OH-7v-PhV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,6 +58,7 @@
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="trainTableView" destination="9OH-7v-PhV" id="aGj-tR-bci"/>
                         <segue destination="vXZ-lx-hvc" kind="show" identifier="toViewController" id="ouS-Qe-5Td"/>
                     </connections>
                 </tableViewController>
