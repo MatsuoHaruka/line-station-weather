@@ -141,6 +141,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     
     // MARK: - segue methods
+    // セグエです
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toCellViewController"){
