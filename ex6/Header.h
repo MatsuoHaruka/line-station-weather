@@ -11,6 +11,6 @@
 
 #import <AFNetworking/AFNetworking.h>
 
-#import <AFNetworking/UIImageView+AFNetworking.f>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 #endif

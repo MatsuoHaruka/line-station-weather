@@ -9,6 +9,10 @@
 import UIKit
 
 class TrainTableViewController: UITableViewController {
+    
+    @IBOutlet var myTableView: UITableView!
+    var array = Array<String>()
+    var selectedline : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +22,25 @@ class TrainTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let manager = AFHTTPRequestOperationManager()
+        
+        manager.GET("http://express.heartrails.com/api/json?method=getLines&area=%E9%96%A2%E6%9D%B1", parameters: nil,
+            success: {(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) in
+                println("success!!")
+                
+                let dic : NSDictionary = responsobject as! NSDictionary
+                
+                self.array = dic.objectForKey("response")?.objectForKey("line") as! Array
+                
+                self.myTableView.reloadData()
+                
+            },
+            failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error!!")})
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,18 +59,26 @@ class TrainTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.array.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
+        
         // Configure the cell...
+        cell.textLabel?.text = self.array[indexPath.row]
 
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedline = array[indexPath.row]
+        performSegueWithIdentifier("next", sender: nil)
+    }
+    
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -84,14 +115,17 @@ class TrainTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "toTrainViewController"){
+            let trainViewController : TrainTableViewController = segue.destinationViewController as! TrainTableViewController
+            
+            trainViewController.line = selectedline}
+    
     }
-    */
-
 }
