@@ -11,12 +11,12 @@ import UIKit
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
   
     @IBOutlet weak var tableView: UITableView!
-      
+    
     var jsoncount : Int?
     var line :String?
-    var x : Float?
-    var y : Float?
-    let urlString : String?
+    var x : Int?
+    var y : Int?
+    var urlString : String? = nil
     
     var cellItems = NSMutableArray()
     var selectedRow :String?
@@ -35,14 +35,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         let urlString2 = "&lon="
         var stringX = x?.description
         var stringY = y?.description
-        let urlString = urlString1 + stringY! + urlString2 + stringX!
+        self.urlString = urlString1 + stringY! + urlString2 + stringX!
         
         
         var url = NSURL(string: self.urlString!)
         var task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {data, response, error in
             var json = JSON(data: data)
+            println(json)
+            
             self.jsoncount = json["list"].count
-            println(self.jsoncount!)
+            
             for var i = 0; i < self.jsoncount; i++ {
             var dt_txt = json["list"][i]["dt_txt"]
             var weatherMain = json["list"][i]["weather"][0]["main"]
