@@ -14,8 +14,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
       
     var jsoncount : Int?
     var line :String?
-    var x : Int?
-    var y : Int?
+    var x : Float?
+    var y : Float?
+    let urlString : String?
     
     var cellItems = NSMutableArray()
     var selectedRow :String?
@@ -26,14 +27,19 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     var date = NSMutableArray()
     var selectedNum : Int?
     
-    let urlString = "http://api.openweathermap.org/data/2.5/forecast?units=metric&q=Tokyo"
-    
     
     
 //   MARK: makeDate
     func makeDate(){
-        var url = NSURL(string: self.urlString)!
-        var task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: {data, response, error in
+        let urlString1 = "http://api.openweathermap.org/data/2.5/weather?lat="
+        let urlString2 = "&lon="
+        var stringX = x?.description
+        var stringY = y?.description
+        let urlString = urlString1 + stringY! + urlString2 + stringX!
+        
+        
+        var url = NSURL(string: self.urlString!)
+        var task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {data, response, error in
             var json = JSON(data: data)
             self.jsoncount = json["list"].count
             println(self.jsoncount!)

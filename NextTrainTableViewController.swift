@@ -16,10 +16,10 @@ class NextTrainTableViewController: UITableViewController {
     var urlString : String?
     var stationName : String?
     var selectedStation : String?
-    var stationX : Int?
-    var selectedX : Int?
-    var stationY : Int?
-    var selectedY : Int?
+    var stationX : Float?
+    var selectedX : Float?
+    var stationY : Float?
+    var selectedY : Float?
 
 
     override func viewDidLoad() {
