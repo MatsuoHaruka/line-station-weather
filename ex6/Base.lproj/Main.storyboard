@@ -36,7 +36,7 @@
             </objects>
             <point key="canvasLocation" x="-219.5" y="-328.5"/>
         </scene>
-        <!--Next Train Table View Controller-->
+        <!--Title-->
         <scene sceneID="Sih-Xf-E6Y">
             <objects>
                 <tableViewController id="cvn-kZ-wHP" customClass="NextTrainTableViewController" customModule="ex6" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,9 +57,11 @@
                             <outlet property="delegate" destination="cvn-kZ-wHP" id="Fdm-bq-OSl"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="t4T-mH-or1"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="myTableView" destination="9OH-7v-PhV" id="hpY-KM-SxA"/>
+                        <outlet property="stationLine" destination="t4T-mH-or1" id="Azh-fT-p0t"/>
                         <segue destination="1by-hx-uid" kind="show" identifier="toWeatherViewController" id="1Sa-JD-TFJ"/>
                     </connections>
                 </tableViewController>
@@ -67,7 +69,7 @@
             </objects>
             <point key="canvasLocation" x="243.5" y="-328.5"/>
         </scene>
-        <!--Weather View Controller-->
+        <!--Title-->
         <scene sceneID="HEN-hr-ogA">
             <objects>
                 <viewController id="1by-hx-uid" customClass="WeatherViewController" customModule="ex6" customModuleProvider="target" sceneMemberID="viewController">
@@ -127,8 +129,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="B6B-HS-Vu8"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="Station" destination="B6B-HS-Vu8" id="yZu-gQ-eZR"/>
                         <outlet property="maxLabel" destination="uE5-Fc-65X" id="pM7-P8-zsR"/>
                         <outlet property="minLabel" destination="DAm-Jl-riP" id="pSp-4t-TVY"/>
                         <outlet property="myImageView" destination="FbH-fc-EaK" id="OQy-p2-WmN"/>

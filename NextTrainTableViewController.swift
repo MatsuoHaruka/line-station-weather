@@ -10,6 +10,7 @@ import UIKit
 
 class NextTrainTableViewController: UITableViewController {
     
+    @IBOutlet weak var stationLine: UINavigationItem!
     @IBOutlet var myTableView: UITableView!
     var line : String?
     var array = Array<NSDictionary>()
@@ -24,6 +25,8 @@ class NextTrainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        stationLine.title = line
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
