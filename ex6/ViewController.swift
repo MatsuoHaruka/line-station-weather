@@ -13,6 +13,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBOutlet weak var tableView: UITableView!
       
     var jsoncount : Int?
+    var line :String?
     
     var cellItems = NSMutableArray()
     var selectedRow :String?

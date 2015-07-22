@@ -14,6 +14,8 @@ class NextTrainTableViewController: UITableViewController {
     var line : String?
     var array = Array<NSDictionary>()
     var urlString : String?
+    var stationName : String?
+    var selectedStation : String?
 
 
     override func viewDidLoad() {
@@ -80,12 +82,18 @@ class NextTrainTableViewController: UITableViewController {
 
         // Configure the cell...
         let station : NSDictionary = self.array[indexPath.row]
-        let stationName : String? = station.objectForKey("name") as? String
+        stationName = station.objectForKey("name") as? String
         
         cell.textLabel?.text = stationName
 
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedStation = self.stationName
+        performSegueWithIdentifier("toViewController", sender: nil)
+    }
+
     
 
     /*
@@ -123,14 +131,20 @@ class NextTrainTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "toViewController"){
+            let viewController : ViewController = segue.destinationViewController as! ViewController
+            
+            viewController.line = selectedStation
+        }
+
     }
-    */
+    
 
 }
