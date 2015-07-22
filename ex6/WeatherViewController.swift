@@ -12,6 +12,9 @@ class WeatherViewController: UIViewController {
     
     @IBOutlet weak var myImageView: UIImageView!
     
+    @IBOutlet weak var minLabel: UILabel!
+    @IBOutlet weak var maxLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
     var line :String?
     var x : Int?
     var y : Int?
@@ -21,6 +24,23 @@ class WeatherViewController: UIViewController {
     var temp : String?
     var temp_max : String?
     var temp_min : String?
+    
+    func roadView(){
+        
+        if self.weather == "Rain"{
+            self.myImageView.image = UIImage(named: "rain.png")
+        }else if self.weather == "Clouds"{
+            self.myImageView.image = UIImage(named: "clouds.png")
+        }else if self.weather == "Clear"{
+            self.myImageView.image = UIImage(named: "clear.png")
+        }
+        println(self.temp!)
+        self.tempLabel.text = self.temp!
+        self.maxLabel.text = self.temp_max!
+        self.minLabel.text = self.temp_min!
+        
+
+    }
     
     //   MARK: makeDate
     func makeDate(){
@@ -41,17 +61,20 @@ class WeatherViewController: UIViewController {
             println(weather)
             self.weather = "\(weather)"
             
-            var temp = json["temp"]
+            var temp = json["main"]["temp"]
+            
             self.temp = "\(temp)"
-            var temp_max = json["temp_max"]
+            var temp_max = json["main"]["temp_max"]
             self.temp_max = "\(temp_max)"
-            var temp_min = json["temp_min"]
+            var temp_min = json["main"]["temp_min"]
             self.temp_min = "\(temp_min)"
+            
+            self.roadView()
                 
         })
     
             println("task end")
-            //            println(self.wether)
+            
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
            
             })
@@ -63,22 +86,14 @@ class WeatherViewController: UIViewController {
         
         
     }
-
-
-
-     override func viewDidLoad() {
+    
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         makeDate()
 
         // Do any additional setup after loading the view.
-        if weather == "Rain"{
-            self.myImageView.image = UIImage(named: "rain.png")
-        }else if weather == "Clouds"{
-            self.myImageView.image = UIImage(named: "clouds.png")
-        }else if weather == "Clear"{
-            self.myImageView.image = UIImage(named: "clear.png")
-        }
-
+        
     }
 
      override func didReceiveMemoryWarning() {
