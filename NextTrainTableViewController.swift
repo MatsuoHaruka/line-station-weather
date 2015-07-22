@@ -16,6 +16,10 @@ class NextTrainTableViewController: UITableViewController {
     var urlString : String?
     var stationName : String?
     var selectedStation : String?
+    var stationX : Int?
+    var selectedX : Int?
+    var stationY : Int?
+    var selectedY : Int?
 
 
     override func viewDidLoad() {
@@ -82,7 +86,10 @@ class NextTrainTableViewController: UITableViewController {
 
         // Configure the cell...
         let station : NSDictionary = self.array[indexPath.row]
-        stationName = station.objectForKey("name") as? String
+        self.stationName = station.objectForKey("name") as? String
+        self.selectedX = station.objectForKey("x") as? Int
+        self.selectedY = station.objectForKey("y") as? Int
+        
         
         cell.textLabel?.text = stationName
 
@@ -91,6 +98,8 @@ class NextTrainTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedStation = self.stationName
+        selectedX = self.stationX
+        selectedY = self.stationY
         performSegueWithIdentifier("toViewController", sender: nil)
     }
 
@@ -142,6 +151,10 @@ class NextTrainTableViewController: UITableViewController {
             let viewController : ViewController = segue.destinationViewController as! ViewController
             
             viewController.line = selectedStation
+            viewController.x = selectedX
+            viewController.y = selectedY
+            println(self.line!)
+            println(self.selectedStation!)
         }
 
     }

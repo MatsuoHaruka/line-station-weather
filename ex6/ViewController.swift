@@ -14,6 +14,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
       
     var jsoncount : Int?
     var line :String?
+    var x : Int?
+    var y : Int?
     
     var cellItems = NSMutableArray()
     var selectedRow :String?
@@ -112,6 +114,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
 
     override func viewDidLoad() {
+        println(self.line!)
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.tableView.delegate = self
