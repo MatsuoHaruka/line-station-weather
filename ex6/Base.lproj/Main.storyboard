@@ -57,11 +57,11 @@
                             <outlet property="delegate" destination="cvn-kZ-wHP" id="Fdm-bq-OSl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="t4T-mH-or1"/>
+                    <navigationItem key="navigationItem" title="Title" id="ONZ-bO-BHh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="myTableView" destination="9OH-7v-PhV" id="hpY-KM-SxA"/>
-                        <outlet property="stationLine" destination="t4T-mH-or1" id="Azh-fT-p0t"/>
+                        <outlet property="stationLine" destination="ONZ-bO-BHh" id="ZyZ-bw-B3F"/>
                         <segue destination="1by-hx-uid" kind="show" identifier="toWeatherViewController" id="1Sa-JD-TFJ"/>
                     </connections>
                 </tableViewController>
@@ -129,13 +129,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="B6B-HS-Vu8"/>
+                    <navigationItem key="navigationItem" title="Title" id="Zxz-o1-Jde"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="Station" destination="B6B-HS-Vu8" id="yZu-gQ-eZR"/>
                         <outlet property="maxLabel" destination="uE5-Fc-65X" id="pM7-P8-zsR"/>
                         <outlet property="minLabel" destination="DAm-Jl-riP" id="pSp-4t-TVY"/>
                         <outlet property="myImageView" destination="FbH-fc-EaK" id="OQy-p2-WmN"/>
+                        <outlet property="station" destination="Zxz-o1-Jde" id="0wp-Wg-51a"/>
                         <outlet property="tempLabel" destination="pYy-xC-moN" id="ogE-Rt-hX7"/>
                         <outlet property="watherLabel" destination="XRc-4w-clb" id="KwV-Vu-OFN"/>
                     </connections>

@@ -10,7 +10,7 @@ import UIKit
 
 class WeatherViewController: UIViewController {
     
-    @IBOutlet weak var Station: UINavigationItem!
+    @IBOutlet weak var station: UINavigationItem!
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var watherLabel: UILabel!
     
@@ -102,7 +102,7 @@ class WeatherViewController: UIViewController {
         super.viewDidLoad()
         makeDate()
         
-        Station.title = line
+        station.title = self.line
 
         // Do any additional setup after loading the view.
         

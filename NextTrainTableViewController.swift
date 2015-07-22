@@ -26,7 +26,7 @@ class NextTrainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stationLine.title = line
+        stationLine.title = self.line
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
