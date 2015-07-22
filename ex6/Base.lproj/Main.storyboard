@@ -60,12 +60,39 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="myTableView" destination="9OH-7v-PhV" id="hpY-KM-SxA"/>
-                        <segue destination="vXZ-lx-hvc" kind="show" identifier="toViewController" id="ouS-Qe-5Td"/>
+                        <segue destination="1by-hx-uid" kind="show" identifier="toWeatherViewController" id="1Sa-JD-TFJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9h-Mm-Gbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="243.5" y="-328.5"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="HEN-hr-ogA">
+            <objects>
+                <viewController id="1by-hx-uid" customClass="WeatherViewController" customModule="ex6" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uzb-Vn-11e"/>
+                        <viewControllerLayoutGuide type="bottom" id="oK5-z4-gJZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4xE-Lt-Q6l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-fc-EaK">
+                                <rect key="frame" x="50" y="216" width="274" height="235"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="myImageView" destination="FbH-fc-EaK" id="OQy-p2-WmN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAj-Eu-uua" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="770.5" y="-328.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">

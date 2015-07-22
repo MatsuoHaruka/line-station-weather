@@ -99,7 +99,7 @@ class NextTrainTableViewController: UITableViewController {
         selectedStation = self.stationName
         self.selectedX = self.stationX
         self.selectedY = self.stationY
-        performSegueWithIdentifier("toViewController", sender: nil)
+        performSegueWithIdentifier("toWeatherViewController", sender: nil)
     }
 
     
@@ -146,12 +146,12 @@ class NextTrainTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if (segue.identifier == "toViewController"){
-            let viewController : ViewController = segue.destinationViewController as! ViewController
+        if (segue.identifier == "toWeatherViewController"){
+            let weatherViewController : WeatherViewController = segue.destinationViewController as! WeatherViewController
             
-            viewController.line = selectedStation
-            viewController.x = selectedX
-            viewController.y = selectedY
+            weatherViewController.line = selectedStation
+            weatherViewController.x = selectedX
+            weatherViewController.y = selectedY
             println(self.line!)
             println(self.selectedStation!)
         }
