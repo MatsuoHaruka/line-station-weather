@@ -11,6 +11,7 @@ import UIKit
 class WeatherViewController: UIViewController {
     
     @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var watherLabel: UILabel!
     
     @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
@@ -28,16 +29,25 @@ class WeatherViewController: UIViewController {
     func roadView(){
         
         if self.weather == "Rain"{
-            self.myImageView.image = UIImage(named: "rain.png")
+            self.myImageView.image = UIImage(named:"rain.png")
         }else if self.weather == "Clouds"{
-            self.myImageView.image = UIImage(named: "clouds.png")
+            self.myImageView.image = UIImage(named:"clouds.png")
         }else if self.weather == "Clear"{
-            self.myImageView.image = UIImage(named: "clear.png")
+            self.myImageView.image = UIImage(named:"clear.png")
         }
         println(self.temp!)
-        self.tempLabel.text = self.temp!
-        self.maxLabel.text = self.temp_max!
-        self.minLabel.text = self.temp_min!
+        println(self.weather!)
+        
+        var tempDouble = atof(self.temp!)
+        var t = tempDouble - 273
+        var maxDouble = atof(self.temp_max!)
+        var max = maxDouble - 273
+        var minDouble = atof(self.temp_min!)
+        var min = minDouble - 273
+        self.tempLabel.text = String("\(t)")
+        self.maxLabel.text = String("\(max)")
+        self.minLabel.text = String("\(min)")
+        self.watherLabel.text = self.weather!
         
 
     }
@@ -54,28 +64,27 @@ class WeatherViewController: UIViewController {
         var url = NSURL(string: self.urlString!)
         var task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {data, response, error in
             var json = JSON(data: data)
-            println(json)
+            
             
             var weather = json["weather"][0]["main"]
-            println("天気")
-            println(weather)
             self.weather = "\(weather)"
             
             var temp = json["main"]["temp"]
-            
             self.temp = "\(temp)"
             var temp_max = json["main"]["temp_max"]
             self.temp_max = "\(temp_max)"
             var temp_min = json["main"]["temp_min"]
             self.temp_min = "\(temp_min)"
             
-            self.roadView()
-                
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.roadView()
+            })
+            
         })
     
-            println("task end")
+        println("task end")
             
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
            
             })
             

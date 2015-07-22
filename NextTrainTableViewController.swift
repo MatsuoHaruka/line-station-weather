@@ -96,9 +96,16 @@ class NextTrainTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedStation = self.stationName
-        self.selectedX = self.stationX
-        self.selectedY = self.stationY
+        
+        // indexPathから選択された駅をself.arrayから取得する
+        
+        // 取得した駅を選択した駅に代入
+        
+        // 次の画面へ遷移する
+        
+        selectedStation = self.array[indexPath.row].objectForKey("name") as? String
+        self.selectedX = self.array[indexPath.row].objectForKey("x") as? Int
+        self.selectedY = self.array[indexPath.row].objectForKey("y") as? Int
         performSegueWithIdentifier("toWeatherViewController", sender: nil)
     }
 
