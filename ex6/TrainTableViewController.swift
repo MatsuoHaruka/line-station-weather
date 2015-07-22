@@ -53,18 +53,21 @@ class TrainTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+        println(self.array.count)
         return self.array.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+//        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         
         // Configure the cell...
         cell.textLabel?.text = self.array[indexPath.row]
@@ -74,7 +77,7 @@ class TrainTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedline = array[indexPath.row]
-        performSegueWithIdentifier("next", sender: nil)
+        performSegueWithIdentifier("toNextTrainViewController", sender: nil)
     }
     
     
@@ -122,7 +125,7 @@ class TrainTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if (segue.identifier == "toTrainViewController"){
+        if (segue.identifier == "toNextTrainViewController"){
             let nextTrainTableViewController : NextTrainTableViewController = segue.destinationViewController as! NextTrainTableViewController
             
             nextTrainTableViewController.line = selectedline
