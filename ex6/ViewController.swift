@@ -11,8 +11,12 @@ import UIKit
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
   
     @IBOutlet weak var tableView: UITableView!
-      
+    
     var jsoncount : Int?
+    var line :String?
+    var x : Int?
+    var y : Int?
+    var urlString : String? = nil
     
     var cellItems = NSMutableArray()
     var selectedRow :String?
@@ -23,17 +27,24 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     var date = NSMutableArray()
     var selectedNum : Int?
     
-    let urlString = "http://api.openweathermap.org/data/2.5/forecast?units=metric&q=Tokyo"
     
     
-    
-//    makeDate
+//   MARK: makeDate
     func makeDate(){
-        var url = NSURL(string: self.urlString)!
-        var task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: {data, response, error in
+        let urlString1 = "http://api.openweathermap.org/data/2.5/weather?lat="
+        let urlString2 = "&lon="
+        var stringX = x?.description
+        var stringY = y?.description
+        self.urlString = urlString1 + stringY! + urlString2 + stringX!
+        
+        
+        var url = NSURL(string: self.urlString!)
+        var task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {data, response, error in
             var json = JSON(data: data)
+            println(json)
+            
             self.jsoncount = json["list"].count
-            println(self.jsoncount!)
+            
             for var i = 0; i < self.jsoncount; i++ {
             var dt_txt = json["list"][i]["dt_txt"]
             var weatherMain = json["list"][i]["weather"][0]["main"]
@@ -72,7 +83,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
     }
     
-//    tableView
+//  MARK:  tableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.cellItems.count
     }
@@ -111,6 +122,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
 
     override func viewDidLoad() {
+        println(self.line!)
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.tableView.delegate = self

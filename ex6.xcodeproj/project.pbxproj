@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E01E66F1B5F610100CBC13B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01E66E1B5F610100CBC13B /* WeatherViewController.swift */; };
 		6E1B1D6E1B4381BF004797A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1D6D1B4381BF004797A6 /* AppDelegate.swift */; };
-		6E1B1D701B4381BF004797A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1D6F1B4381BF004797A6 /* ViewController.swift */; };
 		6E1B1D731B4381BF004797A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1B1D711B4381BF004797A6 /* Main.storyboard */; };
 		6E1B1D751B4381BF004797A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1B1D741B4381BF004797A6 /* Images.xcassets */; };
 		6E1B1D781B4381BF004797A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1B1D761B4381BF004797A6 /* LaunchScreen.xib */; };
 		6E1B1D841B4381BF004797A6 /* ex6Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1D831B4381BF004797A6 /* ex6Tests.swift */; };
-		6E1B1D8E1B438416004797A6 /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1D8D1B438416004797A6 /* CellViewController.swift */; };
 		6E1B1DF31B43986E004797A6 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1DF21B43986E004797A6 /* SwiftyJSON.swift */; };
+		6E44EB741B56584100F02089 /* TrainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E44EB731B56584100F02089 /* TrainTableViewController.swift */; };
+		6E44EB761B56587D00F02089 /* NextTrainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E44EB751B56587D00F02089 /* NextTrainTableViewController.swift */; };
 		6EEBB6281B43E88700D2B143 /* clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEBB6251B43E88700D2B143 /* clear.png */; };
 		6EEBB6291B43E88700D2B143 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEBB6261B43E88700D2B143 /* clouds.png */; };
 		6EEBB62A1B43E88700D2B143 /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEBB6271B43E88700D2B143 /* rain.png */; };
 		6EEBB62C1B4585CC00D2B143 /* weatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBB62B1B4585CC00D2B143 /* weatherCell.swift */; };
+		DB2E7A99B22E9A1989290261 /* libPods-ex6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14914A4EC2369A556D93F14E /* libPods-ex6.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,22 +34,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14914A4EC2369A556D93F14E /* libPods-ex6.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ex6.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16524E5A75FB8D1F4AE65321 /* Pods-ex6.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ex6.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ex6/Pods-ex6.debug.xcconfig"; sourceTree = "<group>"; };
+		6E01E66E1B5F610100CBC13B /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		6E1B1D681B4381BF004797A6 /* ex6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ex6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1B1D6C1B4381BF004797A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E1B1D6D1B4381BF004797A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6E1B1D6F1B4381BF004797A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6E1B1D721B4381BF004797A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E1B1D741B4381BF004797A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6E1B1D771B4381BF004797A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6E1B1D7D1B4381BF004797A6 /* ex6Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ex6Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1B1D821B4381BF004797A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E1B1D831B4381BF004797A6 /* ex6Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ex6Tests.swift; sourceTree = "<group>"; };
-		6E1B1D8D1B438416004797A6 /* CellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
 		6E1B1DF21B43986E004797A6 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		6E3FED491B564E6100DCCA4D /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		6E44EB731B56584100F02089 /* TrainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTableViewController.swift; sourceTree = "<group>"; };
+		6E44EB751B56587D00F02089 /* NextTrainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextTrainTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		6EEBB6251B43E88700D2B143 /* clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear.png; sourceTree = "<group>"; };
 		6EEBB6261B43E88700D2B143 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
 		6EEBB6271B43E88700D2B143 /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
 		6EEBB62B1B4585CC00D2B143 /* weatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weatherCell.swift; sourceTree = "<group>"; };
+		ED02908D69CBFF1B4F9466F1 /* Pods-ex6.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ex6.release.xcconfig"; path = "Pods/Target Support Files/Pods-ex6/Pods-ex6.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2E7A99B22E9A1989290261 /* libPods-ex6.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +82,8 @@
 				6E1B1D6A1B4381BF004797A6 /* ex6 */,
 				6E1B1D801B4381BF004797A6 /* ex6Tests */,
 				6E1B1D691B4381BF004797A6 /* Products */,
+				B72B7F59C584329A4973568C /* Pods */,
+				E45678EB7E7A49FD337713ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,10 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				6E1B1D6D1B4381BF004797A6 /* AppDelegate.swift */,
-				6E1B1D6F1B4381BF004797A6 /* ViewController.swift */,
 				6EEBB62B1B4585CC00D2B143 /* weatherCell.swift */,
+				6E44EB731B56584100F02089 /* TrainTableViewController.swift */,
+				6E44EB751B56587D00F02089 /* NextTrainTableViewController.swift */,
+				6E01E66E1B5F610100CBC13B /* WeatherViewController.swift */,
 				6E1B1D711B4381BF004797A6 /* Main.storyboard */,
-				6E1B1D8D1B438416004797A6 /* CellViewController.swift */,
 				6E1B1D741B4381BF004797A6 /* Images.xcassets */,
 				6E1B1D761B4381BF004797A6 /* LaunchScreen.xib */,
 				6E1B1DF21B43986E004797A6 /* SwiftyJSON.swift */,
@@ -101,6 +112,7 @@
 				6EEBB6261B43E88700D2B143 /* clouds.png */,
 				6EEBB6271B43E88700D2B143 /* rain.png */,
 				6E1B1D6B1B4381BF004797A6 /* Supporting Files */,
+				6E3FED491B564E6100DCCA4D /* Header.h */,
 			);
 			path = ex6;
 			sourceTree = "<group>";
@@ -130,6 +142,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B72B7F59C584329A4973568C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				16524E5A75FB8D1F4AE65321 /* Pods-ex6.debug.xcconfig */,
+				ED02908D69CBFF1B4F9466F1 /* Pods-ex6.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E45678EB7E7A49FD337713ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14914A4EC2369A556D93F14E /* libPods-ex6.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E1B1D871B4381BF004797A6 /* Build configuration list for PBXNativeTarget "ex6" */;
 			buildPhases = (
+				9DA4A8EED249CDAAE47E33A6 /* Check Pods Manifest.lock */,
 				6E1B1D641B4381BF004797A6 /* Sources */,
 				6E1B1D651B4381BF004797A6 /* Frameworks */,
 				6E1B1D661B4381BF004797A6 /* Resources */,
+				6FAD3CAEEAFF115FC0B1A13C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,15 +259,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6FAD3CAEEAFF115FC0B1A13C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ex6/Pods-ex6-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DA4A8EED249CDAAE47E33A6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6E1B1D641B4381BF004797A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1B1D8E1B438416004797A6 /* CellViewController.swift in Sources */,
-				6E1B1D701B4381BF004797A6 /* ViewController.swift in Sources */,
+				6E44EB761B56587D00F02089 /* NextTrainTableViewController.swift in Sources */,
 				6EEBB62C1B4585CC00D2B143 /* weatherCell.swift in Sources */,
 				6E1B1D6E1B4381BF004797A6 /* AppDelegate.swift in Sources */,
+				6E01E66F1B5F610100CBC13B /* WeatherViewController.swift in Sources */,
+				6E44EB741B56584100F02089 /* TrainTableViewController.swift in Sources */,
 				6E1B1DF31B43986E004797A6 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,21 +423,25 @@
 		};
 		6E1B1D881B4381BF004797A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16524E5A75FB8D1F4AE65321 /* Pods-ex6.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ex6/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ex6/Header.h;
 			};
 			name = Debug;
 		};
 		6E1B1D891B4381BF004797A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED02908D69CBFF1B4F9466F1 /* Pods-ex6.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ex6/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ex6/Header.h;
 			};
 			name = Release;
 		};
