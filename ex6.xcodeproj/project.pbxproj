@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		6E01E66F1B5F610100CBC13B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01E66E1B5F610100CBC13B /* WeatherViewController.swift */; };
 		6E1B1D6E1B4381BF004797A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1D6D1B4381BF004797A6 /* AppDelegate.swift */; };
-		6E1B1D701B4381BF004797A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1D6F1B4381BF004797A6 /* ViewController.swift */; };
 		6E1B1D731B4381BF004797A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1B1D711B4381BF004797A6 /* Main.storyboard */; };
 		6E1B1D751B4381BF004797A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1B1D741B4381BF004797A6 /* Images.xcassets */; };
 		6E1B1D781B4381BF004797A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1B1D761B4381BF004797A6 /* LaunchScreen.xib */; };
 		6E1B1D841B4381BF004797A6 /* ex6Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1D831B4381BF004797A6 /* ex6Tests.swift */; };
-		6E1B1D8E1B438416004797A6 /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1D8D1B438416004797A6 /* CellViewController.swift */; };
 		6E1B1DF31B43986E004797A6 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1DF21B43986E004797A6 /* SwiftyJSON.swift */; };
 		6E44EB741B56584100F02089 /* TrainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E44EB731B56584100F02089 /* TrainTableViewController.swift */; };
 		6E44EB761B56587D00F02089 /* NextTrainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E44EB751B56587D00F02089 /* NextTrainTableViewController.swift */; };
@@ -42,14 +40,12 @@
 		6E1B1D681B4381BF004797A6 /* ex6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ex6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1B1D6C1B4381BF004797A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E1B1D6D1B4381BF004797A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6E1B1D6F1B4381BF004797A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6E1B1D721B4381BF004797A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E1B1D741B4381BF004797A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6E1B1D771B4381BF004797A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6E1B1D7D1B4381BF004797A6 /* ex6Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ex6Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1B1D821B4381BF004797A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E1B1D831B4381BF004797A6 /* ex6Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ex6Tests.swift; sourceTree = "<group>"; };
-		6E1B1D8D1B438416004797A6 /* CellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
 		6E1B1DF21B43986E004797A6 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		6E3FED491B564E6100DCCA4D /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		6E44EB731B56584100F02089 /* TrainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTableViewController.swift; sourceTree = "<group>"; };
@@ -104,8 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				6E1B1D6D1B4381BF004797A6 /* AppDelegate.swift */,
-				6E1B1D6F1B4381BF004797A6 /* ViewController.swift */,
-				6E1B1D8D1B438416004797A6 /* CellViewController.swift */,
 				6EEBB62B1B4585CC00D2B143 /* weatherCell.swift */,
 				6E44EB731B56584100F02089 /* TrainTableViewController.swift */,
 				6E44EB751B56587D00F02089 /* NextTrainTableViewController.swift */,
@@ -303,8 +297,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1B1D8E1B438416004797A6 /* CellViewController.swift in Sources */,
-				6E1B1D701B4381BF004797A6 /* ViewController.swift in Sources */,
 				6E44EB761B56587D00F02089 /* NextTrainTableViewController.swift in Sources */,
 				6EEBB62C1B4585CC00D2B143 /* weatherCell.swift in Sources */,
 				6E1B1D6E1B4381BF004797A6 /* AppDelegate.swift in Sources */,
