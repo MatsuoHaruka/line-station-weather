@@ -4,6 +4,69 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="B5P-yf-Tya">
+            <objects>
+                <viewController id="Ncb-zH-Tds" customClass="HomeViewController" customModule="ex6" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rKe-VE-AWu"/>
+                        <viewControllerLayoutGuide type="bottom" id="R75-Ni-gaT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iUA-lm-Fzr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyZ-Hk-lFu">
+                                <rect key="frame" x="78" y="407" width="218" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="路線から天気を見る">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="myButton2:" destination="Ncb-zH-Tds" eventType="touchUpInside" id="n2R-gG-eH4"/>
+                                    <segue destination="ZJZ-u9-oWq" kind="show" id="XWT-yw-bjZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srW-iT-Lkh">
+                                <rect key="frame" x="69" y="218" width="237" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="現在地から天気を見る">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="myButton1:" destination="Ncb-zH-Tds" eventType="touchUpInside" id="FSD-iP-DTi"/>
+                                    <segue destination="X7p-Pm-oMo" kind="show" id="BgA-Qy-mjF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q3c-Iq-HEb"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LKY-61-XqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-795.5" y="-698.5"/>
+        </scene>
+        <!--Next View Controller-->
+        <scene sceneID="xnI-ud-ABr">
+            <objects>
+                <viewController id="X7p-Pm-oMo" customClass="NextViewController" customModule="ex6" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ib4-Ys-aXs"/>
+                        <viewControllerLayoutGuide type="bottom" id="Opb-Oe-ZF7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S5V-KQ-OY5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dc8-hW-QOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-225.5" y="-1074.5"/>
+        </scene>
         <!--Train Table View Controller-->
         <scene sceneID="5Eb-Mt-sh1">
             <objects>
@@ -34,7 +97,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjr-8t-P34" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219.5" y="-328.5"/>
+            <point key="canvasLocation" x="-225.5" y="-328.5"/>
         </scene>
         <!--Title-->
         <scene sceneID="Sih-Xf-E6Y">
@@ -67,7 +130,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9h-Mm-Gbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243.5" y="-328.5"/>
+            <point key="canvasLocation" x="271.5" y="-328.5"/>
         </scene>
         <!--Title-->
         <scene sceneID="HEN-hr-ogA">
@@ -154,12 +217,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ZJZ-u9-oWq" kind="relationship" relationship="rootViewController" id="Sr2-cP-Ku7"/>
+                        <segue destination="Ncb-zH-Tds" kind="relationship" relationship="rootViewController" id="NSw-Fm-nLU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRw-S5-Lz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-661.5" y="-328.5"/>
+            <point key="canvasLocation" x="-1311.5" y="-698.5"/>
         </scene>
     </scenes>
 </document>
