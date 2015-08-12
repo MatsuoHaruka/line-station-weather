@@ -17,10 +17,10 @@ class NextTrainTableViewController: UITableViewController {
     var urlString : String?
     var stationName : String?
     var selectedStation : String?
-    var stationX : Int?
-    var selectedX : Int?
-    var stationY : Int?
-    var selectedY : Int?
+    var stationX : Double?
+    var selectedX : Double?
+    var stationY : Double?
+    var selectedY : Double?
 
 
     override func viewDidLoad() {
@@ -90,8 +90,8 @@ class NextTrainTableViewController: UITableViewController {
         // Configure the cell...
         let station : NSDictionary = self.array[indexPath.row]
         self.stationName = station.objectForKey("name") as? String
-        self.stationX = station.objectForKey("x") as? Int
-        self.stationY = station.objectForKey("y") as? Int
+        self.stationX = station.objectForKey("x") as? Double
+        self.stationY = station.objectForKey("y") as? Double
 
         cell.textLabel?.text = stationName
 
@@ -105,10 +105,11 @@ class NextTrainTableViewController: UITableViewController {
         // 取得した駅を選択した駅に代入
         
         // 次の画面へ遷移する
+        println(stationX)
         
         selectedStation = self.array[indexPath.row].objectForKey("name") as? String
-        self.selectedX = self.array[indexPath.row].objectForKey("x") as? Int
-        self.selectedY = self.array[indexPath.row].objectForKey("y") as? Int
+        self.selectedX = self.array[indexPath.row].objectForKey("x") as? Double
+        self.selectedY = self.array[indexPath.row].objectForKey("y") as? Double
         performSegueWithIdentifier("toWeatherViewController", sender: nil)
     }
 
