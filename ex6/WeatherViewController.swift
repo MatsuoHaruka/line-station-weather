@@ -10,6 +10,8 @@ import UIKit
 
 class WeatherViewController: UIViewController {
     
+    @IBOutlet weak var favoriteBtn: UIButton!
+    
     @IBOutlet weak var station: UINavigationItem!
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var watherLabel: UILabel!
@@ -109,12 +111,29 @@ class WeatherViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        //お気に入りボタン
+        var buttonImage = UIImage(named: "star.jpg")
+        self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+        self.favoriteBtn.addTarget(self, action: "btn_click:", forControlEvents:.TouchUpInside)
+        
     }
 
      override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //ボタン押したら
+    func btn_click(sender: UIButton){
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.setObject(y, forKey: "lat")
+        ud.setObject(x, forKey: "lon")
+        ud.setObject(line, forKey: "address")
+        ud.synchronize()
+        
+        
+    }
+
     
 
     /*

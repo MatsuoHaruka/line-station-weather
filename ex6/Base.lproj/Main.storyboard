@@ -301,12 +301,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9z-6h-59b">
+                                <rect key="frame" x="313" y="72" width="46" height="46"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Zxz-o1-Jde"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="favoriteBtn" destination="H9z-6h-59b" id="7ta-zm-xeW"/>
                         <outlet property="maxLabel" destination="uE5-Fc-65X" id="pM7-P8-zsR"/>
                         <outlet property="minLabel" destination="DAm-Jl-riP" id="pSp-4t-TVY"/>
                         <outlet property="myImageView" destination="FbH-fc-EaK" id="OQy-p2-WmN"/>
