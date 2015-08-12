@@ -184,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="-225.5" y="-328.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--お気に入り-->
         <scene sceneID="D6m-k6-R8e">
             <objects>
-                <tableViewController id="fTY-ou-Xjm" sceneMemberID="viewController">
+                <tableViewController id="fTY-ou-Xjm" customClass="FavoriteTableViewController" customModule="ex6" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fpa-aF-Y8c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,6 +198,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nnf-pt-QVc" id="t8w-Ue-fy5">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="f4D-PF-NWl" kind="show" identifier="toFavoriteViewController" id="ChX-2V-LwO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -205,11 +208,31 @@
                             <outlet property="delegate" destination="fTY-ou-Xjm" id="RE0-rH-Gju"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="お気に入り" id="GBc-T3-2Am"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCV-9v-DLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-225.5" y="443.5"/>
+        </scene>
+        <!--Favorite View Controller-->
+        <scene sceneID="HcC-iz-r4g">
+            <objects>
+                <viewController id="f4D-PF-NWl" customClass="FavoriteViewController" customModule="ex6" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NN9-5x-X4K"/>
+                        <viewControllerLayoutGuide type="bottom" id="qtW-Yd-etg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4IY-g0-ohF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NA0-5A-X1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271.5" y="443.5"/>
         </scene>
         <!--Title-->
         <scene sceneID="Sih-Xf-E6Y">
