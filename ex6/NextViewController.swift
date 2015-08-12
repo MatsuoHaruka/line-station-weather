@@ -86,6 +86,8 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
             self.myImageView.image = UIImage(named: "clouds.png")
         }else if self.weather == "Clear"{
             self.myImageView.image = UIImage(named: "clear.png")
+        }else if self.weather == "Thunderstorm"{
+            self.myImageView.image = UIImage(named:"thunderstorm.png")
         }
         var tempDouble = atof(self.temp!)
         var t = tempDouble - 273

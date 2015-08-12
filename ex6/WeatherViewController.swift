@@ -35,7 +35,10 @@ class WeatherViewController: UIViewController {
             self.myImageView.image = UIImage(named:"clouds.png")
         }else if self.weather == "Clear"{
             self.myImageView.image = UIImage(named:"clear.png")
+        }else if self.weather == "Thunderstorm"{
+            self.myImageView.image = UIImage(named:"thunderstorm.png")
         }
+        
         println(self.temp!)
         println(self.weather!)
         
