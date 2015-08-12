@@ -11,6 +11,8 @@ import CoreLocation
 
 class NextViewController: UIViewController,CLLocationManagerDelegate {
     
+    
+    @IBOutlet weak var favoriteBtn: UIButton!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var myImageView: UIImageView!
@@ -36,6 +38,13 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
 
 
         // Do any additional setup after loading the view.
+        
+        
+        //お気に入りボタン
+        var buttonImage = UIImage(named: "star.jpg")
+        self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+        self.favoriteBtn.addTarget(self, action: "btn_click:", forControlEvents:.TouchUpInside)
+        
         
         self.lm = CLLocationManager()
         self.longitude = CLLocationDegrees()
@@ -169,6 +178,17 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         
         task.resume()
         println("makeDate end")
+        
+    }
+    
+    //ボタン押したら
+    func btn_click(sender: UIButton){
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.setObject(latitude, forKey: "lat")
+        ud.setObject(longitude, forKey: "lon")
+        ud.setObject(address, forKey: "address")
+        ud.synchronize()
+        
         
     }
     
