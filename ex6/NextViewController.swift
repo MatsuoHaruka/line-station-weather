@@ -11,6 +11,7 @@ import CoreLocation
 
 class NextViewController: UIViewController,CLLocationManagerDelegate {
     
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var tempLabel: UILabel!
@@ -19,6 +20,9 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
     var lm: CLLocationManager!
     var longitude: CLLocationDegrees!
     var latitude: CLLocationDegrees!
+    var lat : Double!
+    var lon : Double!
+    var address : String!
     
     var urlString : String? = nil
     var weather : String?
@@ -29,7 +33,7 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeDate()
+
 
         // Do any additional setup after loading the view.
         
@@ -42,6 +46,7 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         lm.requestAlwaysAuthorization()
         
         lm.startUpdatingLocation()
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,13 +54,20 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //位置情報取得成功時
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
         latitude = newLocation.coordinate.latitude
         longitude = newLocation.coordinate.longitude
+        lm.stopUpdatingLocation()
         println(latitude)
         println(longitude)
+        println("Success!")
+        makeDate()
+        geocording()
     }
     
+    //位置情報取得失敗時
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         println("Error!")
     }
@@ -82,18 +94,52 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
     }
     
     
+    //逆ジオコーディング
+    func geocording(){
+        let urlString1 = "https://maps.googleapis.com/maps/api/geocode/json?latlng="
+        let urlString2 = "&sensor=true"
+        var stringLat = latitude?.description
+        var stringLon = longitude?.description
+        let urlString3 = urlString1 + stringLat! + "," + stringLon! + urlString2
+        println(urlString3)
+        
+        var url = NSURL(string: urlString3)
+        var task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {data,response,error in
+            
+            var json = JSON(data: data)
+            
+            var address = json["results"][0]["formatted_address"]
+            self.address = "\(address)"
+            
+            println(self.address)
+            
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.addressLabel.text = self.address
+            })
+        
+        })
+        task.resume()
+        
+    }
+    
+    
     func makeDate(){
         let urlString1 = "http://api.openweathermap.org/data/2.5/weather?lat="
         let urlString2 = "&lon="
-        self.urlString = urlString1 + String(stringInterpolationSegment: latitude) + urlString2 + String(stringInterpolationSegment: longitude)
+        var stringLat = latitude?.description
+        var stringLon = longitude?.description
+        
+        self.urlString = urlString1 + stringLat! + urlString2 + stringLon!
+        println(urlString!)
         
         var url = NSURL(string: self.urlString!)
         var task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {data,response,error in
         
             var json = JSON(data: data)
-            println(json)
-            var weather = json["wether"][0]["main"]
+            var weather = json["weather"][0]["main"]
             self.weather = "\(weather)"
+            println(weather)
             
             var temp = json["main"]["temp"]
             self.temp = "\(temp)"
