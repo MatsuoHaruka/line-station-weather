@@ -115,7 +115,10 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
             
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.addressLabel.adjustsFontSizeToFitWidth = false
                 self.addressLabel.text = self.address
+                self.addressLabel.sizeToFit()
+                
             })
         
         })
