@@ -46,6 +46,11 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         lm.requestAlwaysAuthorization()
         
         lm.startUpdatingLocation()
+        
+        //位置情報の精度
+        lm.desiredAccuracy = kCLLocationAccuracyBest
+        //位置情報取得間隔(m)
+        lm.distanceFilter = 300
     
     }
 
@@ -69,7 +74,8 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
     
     //位置情報取得失敗時
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println("Error!")
+        
+        println(error)
     }
     
     
@@ -110,7 +116,8 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
             
             var address = json["results"][0]["formatted_address"]
             self.address = "\(address)"
-            
+            self.address = self.address.stringByReplacingOccurrencesOfString(", ", withString: "\n", options: nil, range: nil)
+            self.address = self.address.stringByReplacingOccurrencesOfString(" ", withString: "\n", options: nil, range: nil)
             println(self.address)
             
             
