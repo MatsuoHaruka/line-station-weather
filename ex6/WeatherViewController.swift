@@ -18,8 +18,8 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var maxLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     var line :String?
-    var x : Int?
-    var y : Int?
+    var x : Double?
+    var y : Double?
     var urlString : String? = nil
     
     var weather : String?
@@ -60,7 +60,7 @@ class WeatherViewController: UIViewController {
         var stringX = x?.description
         var stringY = y?.description
         self.urlString = urlString1 + stringY! + urlString2 + stringX!
-        
+        println(self.urlString)
         
         var url = NSURL(string: self.urlString!)
         var task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {data, response, error in
