@@ -183,15 +183,33 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
     
     //ボタン押したら
     func btn_click(sender: UIButton){
+        var fav = WeatherFav()
+        
+        fav.lon = self.lon
+        fav.lat = self.lat
+        fav.address = self.address
+        
+        //シリアライズ
+        var dataFav : NSData = NSKeyedArchiver.archivedDataWithRootObject(fav)
+        
         let ud = NSUserDefaults.standardUserDefaults()
-        ud.setObject(latitude, forKey: "lat")
-        ud.setObject(longitude, forKey: "lon")
-        ud.setObject(address, forKey: "address")
+        
+        var favArray : Array<NSData>? = ud.objectForKey("fav") as? Array<NSData>
+        if favArray == nil {
+            favArray = Array<NSData>()
+        }
+        favArray!.append(dataFav)
+        
+        ud.setObject(favArray!, forKey: "fav")
         ud.synchronize()
-        
-        
+
     }
     
+    override func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.lat, forKey: "lat")
+        aCoder.encodeObject(self.lon, forKey: "lon")
+        aCoder.encodeObject(self.address, forKey: "address")
+    }
 
     /*
     // MARK: - Navigation

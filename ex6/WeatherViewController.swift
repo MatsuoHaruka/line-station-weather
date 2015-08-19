@@ -125,14 +125,34 @@ class WeatherViewController: UIViewController {
     
     //ボタン押したら
     func btn_click(sender: UIButton){
+        var fav = WeatherFav()
+        
+        fav.lon = self.x
+        fav.lat = self.y
+        fav.address = self.line
+        
+        //シリアライズ
+        var dataFav : NSData = NSKeyedArchiver.archivedDataWithRootObject(fav)
+        
         let ud = NSUserDefaults.standardUserDefaults()
-        ud.setObject(y, forKey: "lat")
-        ud.setObject(x, forKey: "lon")
-        ud.setObject(line, forKey: "address")
+        
+        var favArray : Array<NSData>? = ud.objectForKey("fav") as? Array<NSData>
+        if favArray == nil {
+            favArray = Array<NSData>()
+        }
+        favArray!.append(dataFav)
+        
+        ud.setObject(favArray!, forKey: "fav")
         ud.synchronize()
         
-        
     }
+//    
+//    override func encodeWithCoder(aCoder: NSCoder) {
+//        aCoder.encodeDouble(self.y!, forKey: "lat")
+//        aCoder.encodeDouble(self.x!, forKey: "lon")
+//        aCoder.encodeObject(self.line!, forKey: "address")
+//        
+//    }
 
     
 
