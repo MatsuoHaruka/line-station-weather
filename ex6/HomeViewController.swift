@@ -15,6 +15,8 @@ class HomeViewController: UIViewController {
     @IBAction func myButton2(sender: AnyObject) {
     }
     
+    @IBAction func myButton3(sender: AnyObject) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

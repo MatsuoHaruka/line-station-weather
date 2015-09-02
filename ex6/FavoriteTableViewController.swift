@@ -14,6 +14,10 @@ class FavoriteTableViewController: UITableViewController {
     var lon : Double!
     var address :  String!
     
+    var selectedAddress : String!
+    var selectedLon : Double!
+    var selectedLat : Double!
+    
     var datas : Array<WeatherFav> = []
    
     override func viewDidLoad() {
@@ -65,15 +69,42 @@ class FavoriteTableViewController: UITableViewController {
         return self.datas.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+//        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
 
         // Configure the cell...
+        cell.textLabel?.text = datas[indexPath.row].address
 
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.selectedAddress = datas[indexPath.row].address
+        self.selectedLat = datas[indexPath.row].lat
+        self.selectedLon = datas[indexPath.row].lon
+        println(self.selectedLat)
+        println(self.selectedLon)
+        println(self.selectedAddress)
+        performSegueWithIdentifier("toFavoriteViewController", sender: nil)
+        
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "toFavoriteViewController"){
+            let favoriteViewController : FavoriteViewController = segue.destinationViewController as! FavoriteViewController
+            
+            favoriteViewController.address = self.selectedAddress
+            favoriteViewController.lat = self.selectedLat
+            favoriteViewController.lon = self.selectedLon
+            
+            
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

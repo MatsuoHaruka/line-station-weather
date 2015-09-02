@@ -205,11 +205,11 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
 
     }
     
-    override func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.lat, forKey: "lat")
-        aCoder.encodeObject(self.lon, forKey: "lon")
-        aCoder.encodeObject(self.address, forKey: "address")
-    }
+//    override func encodeWithCoder(aCoder: NSCoder) {
+//        aCoder.encodeObject(self.lat, forKey: "lat")
+//        aCoder.encodeObject(self.lon, forKey: "lon")
+//        aCoder.encodeObject(self.address, forKey: "address")
+//    }
 
     /*
     // MARK: - Navigation
