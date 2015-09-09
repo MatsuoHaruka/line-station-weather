@@ -11,8 +11,6 @@
 		6E0CF5E01B720936008DAE5E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CF5DF1B720936008DAE5E /* HomeViewController.swift */; };
 		6E0CF5E21B720951008DAE5E /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CF5E11B720951008DAE5E /* NextViewController.swift */; };
 		6E0CF5E41B720A1C008DAE5E /* NextTrainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CF5E31B720A1C008DAE5E /* NextTrainTableViewController.swift */; };
-		6E0CF5E61B7B1225008DAE5E /* star.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E0CF5E51B7B1225008DAE5E /* star.jpg */; };
-		6E0CF5E81B7B18B4008DAE5E /* thunderstorm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E0CF5E71B7B18B4008DAE5E /* thunderstorm.png */; };
 		6E0CF5EC1B7B3B3E008DAE5E /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CF5EB1B7B3B3E008DAE5E /* FavoriteViewController.swift */; };
 		6E0CF5EE1B7B4AB0008DAE5E /* WeatherFav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CF5ED1B7B4AB0008DAE5E /* WeatherFav.swift */; };
 		6E1B1D6E1B4381BF004797A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1D6D1B4381BF004797A6 /* AppDelegate.swift */; };
@@ -22,6 +20,9 @@
 		6E1B1D841B4381BF004797A6 /* ex6Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1D831B4381BF004797A6 /* ex6Tests.swift */; };
 		6E1B1DF31B43986E004797A6 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1DF21B43986E004797A6 /* SwiftyJSON.swift */; };
 		6E44EB741B56584100F02089 /* TrainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E44EB731B56584100F02089 /* TrainTableViewController.swift */; };
+		6E49BD431B96EF19009561FB /* WeatherMakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E49BD421B96EF19009561FB /* WeatherMakeData.swift */; };
+		6E49BD451B9FC00F009561FB /* thunderstorm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E49BD441B9FC00F009561FB /* thunderstorm.png */; };
+		6E49BD471B9FC023009561FB /* star.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E49BD461B9FC023009561FB /* star.jpg */; };
 		6EEB81BF1B843747009B94AC /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEB81BE1B843747009B94AC /* FavoriteTableViewController.swift */; };
 		6EEBB6281B43E88700D2B143 /* clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEBB6251B43E88700D2B143 /* clear.png */; };
 		6EEBB6291B43E88700D2B143 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEBB6261B43E88700D2B143 /* clouds.png */; };
@@ -47,8 +48,6 @@
 		6E0CF5DF1B720936008DAE5E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6E0CF5E11B720951008DAE5E /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		6E0CF5E31B720A1C008DAE5E /* NextTrainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextTrainTableViewController.swift; sourceTree = "<group>"; };
-		6E0CF5E51B7B1225008DAE5E /* star.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = star.jpg; path = ../../../Desktop/star.jpg; sourceTree = "<group>"; };
-		6E0CF5E71B7B18B4008DAE5E /* thunderstorm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thunderstorm.png; path = ../../../Desktop/thunderstorm.png; sourceTree = "<group>"; };
 		6E0CF5EB1B7B3B3E008DAE5E /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		6E0CF5ED1B7B4AB0008DAE5E /* WeatherFav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFav.swift; sourceTree = "<group>"; };
 		6E1B1D681B4381BF004797A6 /* ex6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ex6.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +62,9 @@
 		6E1B1DF21B43986E004797A6 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		6E3FED491B564E6100DCCA4D /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		6E44EB731B56584100F02089 /* TrainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTableViewController.swift; sourceTree = "<group>"; };
+		6E49BD421B96EF19009561FB /* WeatherMakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherMakeData.swift; sourceTree = "<group>"; };
+		6E49BD441B9FC00F009561FB /* thunderstorm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thunderstorm.png; path = ../../images/thunderstorm.png; sourceTree = "<group>"; };
+		6E49BD461B9FC023009561FB /* star.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = star.jpg; path = ../../images/star.jpg; sourceTree = "<group>"; };
 		6EEB81BE1B843747009B94AC /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		6EEBB6251B43E88700D2B143 /* clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear.png; sourceTree = "<group>"; };
 		6EEBB6261B43E88700D2B143 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				6E1B1D6D1B4381BF004797A6 /* AppDelegate.swift */,
 				6EEBB62B1B4585CC00D2B143 /* weatherCell.swift */,
 				6E0CF5ED1B7B4AB0008DAE5E /* WeatherFav.swift */,
+				6E49BD421B96EF19009561FB /* WeatherMakeData.swift */,
 				6E0CF5DF1B720936008DAE5E /* HomeViewController.swift */,
 				6E0CF5E11B720951008DAE5E /* NextViewController.swift */,
 				6E44EB731B56584100F02089 /* TrainTableViewController.swift */,
@@ -130,8 +133,8 @@
 				6EEBB6251B43E88700D2B143 /* clear.png */,
 				6EEBB6261B43E88700D2B143 /* clouds.png */,
 				6EEBB6271B43E88700D2B143 /* rain.png */,
-				6E0CF5E71B7B18B4008DAE5E /* thunderstorm.png */,
-				6E0CF5E51B7B1225008DAE5E /* star.jpg */,
+				6E49BD441B9FC00F009561FB /* thunderstorm.png */,
+				6E49BD461B9FC023009561FB /* star.jpg */,
 				6E1B1D6B1B4381BF004797A6 /* Supporting Files */,
 				6E3FED491B564E6100DCCA4D /* Header.h */,
 			);
@@ -265,11 +268,11 @@
 			files = (
 				6E1B1D731B4381BF004797A6 /* Main.storyboard in Resources */,
 				6E1B1D781B4381BF004797A6 /* LaunchScreen.xib in Resources */,
-				6E0CF5E81B7B18B4008DAE5E /* thunderstorm.png in Resources */,
 				6E1B1D751B4381BF004797A6 /* Images.xcassets in Resources */,
 				6EEBB6291B43E88700D2B143 /* clouds.png in Resources */,
-				6E0CF5E61B7B1225008DAE5E /* star.jpg in Resources */,
+				6E49BD471B9FC023009561FB /* star.jpg in Resources */,
 				6EEBB6281B43E88700D2B143 /* clear.png in Resources */,
+				6E49BD451B9FC00F009561FB /* thunderstorm.png in Resources */,
 				6EEBB62A1B43E88700D2B143 /* rain.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +332,7 @@
 				6EEB81BF1B843747009B94AC /* FavoriteTableViewController.swift in Sources */,
 				6E01E66F1B5F610100CBC13B /* WeatherViewController.swift in Sources */,
 				6E44EB741B56584100F02089 /* TrainTableViewController.swift in Sources */,
+				6E49BD431B96EF19009561FB /* WeatherMakeData.swift in Sources */,
 				6E0CF5E41B720A1C008DAE5E /* NextTrainTableViewController.swift in Sources */,
 				6E0CF5E01B720936008DAE5E /* HomeViewController.swift in Sources */,
 				6E1B1DF31B43986E004797A6 /* SwiftyJSON.swift in Sources */,

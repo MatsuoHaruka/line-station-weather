@@ -25,6 +25,7 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
     var lat : Double!
     var lon : Double!
     var address : String!
+    var favAddress : String!
     
     var urlString : String? = nil
     var weather : String?
@@ -49,6 +50,9 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         self.lm = CLLocationManager()
         self.longitude = CLLocationDegrees()
         self.latitude = CLLocationDegrees()
+        
+        self.lat = self.latitude as Double
+        self.lon = self.longitude as Double
         
         self.lm.delegate = self
         
@@ -77,7 +81,21 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         println(latitude)
         println(longitude)
         println("Success!")
-        makeDate()
+//        makeDate()
+        var weatherMakeData = WeatherMakeData()
+        weatherMakeData.lat = self.lat
+        weatherMakeData.lon = self.lon
+        weatherMakeData.address = self.address
+        
+        weatherMakeData.makeData { () -> Void in
+            self.weatherLabel.text = weatherMakeData.weather
+            self.maxLabel.text = weatherMakeData.max.description
+            self.minLabel.text = weatherMakeData.min.description
+            self.tempLabel.text = weatherMakeData.t.description
+            
+            var image : String = weatherMakeData.imageName
+            self.myImageView.image = UIImage(named: image)
+        }
         geocording()
     }
     
@@ -88,27 +106,27 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
     }
     
     
-    func roadView(){
-        if self.weather == "Rain"{
-            self.myImageView.image = UIImage(named: "rain.png")
-        }else if self.weather == "Clouds"{
-            self.myImageView.image = UIImage(named: "clouds.png")
-        }else if self.weather == "Clear"{
-            self.myImageView.image = UIImage(named: "clear.png")
-        }else if self.weather == "Thunderstorm"{
-            self.myImageView.image = UIImage(named:"thunderstorm.png")
-        }
-        var tempDouble = atof(self.temp!)
-        var t = tempDouble - 273
-        var maxDouble = atof(self.temp_max!)
-        var max = maxDouble - 273
-        var minDouble = atof(self.temp_min!)
-        var min = minDouble - 273
-        self.tempLabel.text = String("\(t)")
-        self.maxLabel.text = String("\(max)")
-        self.minLabel.text = String("\(min)")
-        self.weatherLabel.text = self.weather!
-    }
+//    func roadView(){
+//        if self.weather == "Rain"{
+//            self.myImageView.image = UIImage(named: "rain.png")
+//        }else if self.weather == "Clouds"{
+//            self.myImageView.image = UIImage(named: "clouds.png")
+//        }else if self.weather == "Clear"{
+//            self.myImageView.image = UIImage(named: "clear.png")
+//        }else if self.weather == "Thunderstorm"{
+//            self.myImageView.image = UIImage(named:"thunderstorm.png")
+//        }
+//        var tempDouble = atof(self.temp!)
+//        var t = tempDouble - 273
+//        var maxDouble = atof(self.temp_max!)
+//        var max = maxDouble - 273
+//        var minDouble = atof(self.temp_min!)
+//        var min = minDouble - 273
+//        self.tempLabel.text = String("\(t)")
+//        self.maxLabel.text = String("\(max)")
+//        self.minLabel.text = String("\(min)")
+//        self.weatherLabel.text = self.weather!
+//    }
     
     
     //逆ジオコーディング
@@ -127,6 +145,7 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
             
             var address = json["results"][0]["formatted_address"]
             self.address = "\(address)"
+            self.favAddress = "\(address)"
             self.address = self.address.stringByReplacingOccurrencesOfString(", ", withString: "\n", options: nil, range: nil)
             self.address = self.address.stringByReplacingOccurrencesOfString(" ", withString: "\n", options: nil, range: nil)
             println(self.address)
@@ -145,49 +164,49 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
     }
     
     
-    func makeDate(){
-        let urlString1 = "http://api.openweathermap.org/data/2.5/weather?lat="
-        let urlString2 = "&lon="
-        var stringLat = latitude?.description
-        var stringLon = longitude?.description
-        
-        self.urlString = urlString1 + stringLat! + urlString2 + stringLon!
-        println(urlString!)
-        
-        var url = NSURL(string: self.urlString!)
-        var task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {data,response,error in
-        
-            var json = JSON(data: data)
-            var weather = json["weather"][0]["main"]
-            self.weather = "\(weather)"
-            println(weather)
-            
-            var temp = json["main"]["temp"]
-            self.temp = "\(temp)"
-            var temp_max = json["main"]["temp_max"]
-            self.temp_max = "\(temp_max)"
-            var temp_min = json["main"]["temp_min"]
-            self.temp_min = "\(temp_min)"
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.roadView()
-            })
-
-        })
-         println("task end")
-        
-        task.resume()
-        println("makeDate end")
-        
-    }
-    
+//    func makeDate(){
+//        let urlString1 = "http://api.openweathermap.org/data/2.5/weather?lat="
+//        let urlString2 = "&lon="
+//        var stringLat = latitude?.description
+//        var stringLon = longitude?.description
+//        
+//        self.urlString = urlString1 + stringLat! + urlString2 + stringLon!
+//        println(urlString!)
+//        
+//        var url = NSURL(string: self.urlString!)
+//        var task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {data,response,error in
+//        
+//            var json = JSON(data: data)
+//            var weather = json["weather"][0]["main"]
+//            self.weather = "\(weather)"
+//            println(weather)
+//            
+//            var temp = json["main"]["temp"]
+//            self.temp = "\(temp)"
+//            var temp_max = json["main"]["temp_max"]
+//            self.temp_max = "\(temp_max)"
+//            var temp_min = json["main"]["temp_min"]
+//            self.temp_min = "\(temp_min)"
+//            
+//            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                self.roadView()
+//            })
+//
+//        })
+//         println("task end")
+//        
+//        task.resume()
+//        println("makeDate end")
+//        
+//    }
+//    
     //ボタン押したら
     func btn_click(sender: UIButton){
         var fav = WeatherFav()
         
         fav.lon = self.lon
         fav.lat = self.lat
-        fav.address = self.address
+        fav.address = self.addressLabel.text
         
         //シリアライズ
         var dataFav : NSData = NSKeyedArchiver.archivedDataWithRootObject(fav)
@@ -204,12 +223,6 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         ud.synchronize()
 
     }
-    
-//    override func encodeWithCoder(aCoder: NSCoder) {
-//        aCoder.encodeObject(self.lat, forKey: "lat")
-//        aCoder.encodeObject(self.lon, forKey: "lon")
-//        aCoder.encodeObject(self.address, forKey: "address")
-//    }
 
     /*
     // MARK: - Navigation
