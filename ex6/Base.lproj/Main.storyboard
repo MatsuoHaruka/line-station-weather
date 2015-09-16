@@ -196,7 +196,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlQ-9u-O9d">
                                         <rect key="frame" x="311" y="9" width="56" height="60"/>
-                                        <state key="normal" image="star.jpg">
+                                        <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -570,9 +570,9 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-fc-EaK">
                                         <rect key="frame" x="56" y="191" width="263" height="181"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9z-6h-59b">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9z-6h-59b">
                                         <rect key="frame" x="311" y="5" width="56" height="60"/>
-                                        <state key="normal" image="star.jpg">
+                                        <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -662,7 +662,4 @@
             <point key="canvasLocation" x="-1311.5" y="-698.5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="star.jpg" width="1024" height="965"/>
-    </resources>
 </document>

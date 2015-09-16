@@ -33,6 +33,7 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
     var temp_max : String?
     var temp_min : String?
     
+    var fav = WeatherFav()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +42,30 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         // Do any additional setup after loading the view.
         
         
-        //お気に入りボタン
-        var buttonImage = UIImage(named: "star.jpg")
-        self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
-        self.favoriteBtn.addTarget(self, action: "btn_click:", forControlEvents:.TouchUpInside)
+//        //お気に入りボタン
+//        fav.lon = self.longitude
+//        fav.lat = self.latitude
+//        fav.address = self.addressLabel.text
+//        
+//        //シリアライズ
+//        var dataFav : NSData = NSKeyedArchiver.archivedDataWithRootObject(fav)
+//        
+//        let ud = NSUserDefaults.standardUserDefaults()
+//        
+//        var favArray : Array<NSData>? = ud.objectForKey("fav") as? Array<NSData>
+//        if favArray == nil {
+//            favArray = Array<NSData>()
+//        }
+//        
+//        if contains(favArray!, dataFav) == false{
+//            var buttonImage = UIImage(named: "star.png")
+//            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+//        }else if contains(favArray!, dataFav) == true{
+//            var buttonImage = UIImage(named: "star2.gif")
+//            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+//        }
+//        
+//        self.favoriteBtn.addTarget(self, action: "btn_click:", forControlEvents:.TouchUpInside)
         
         
         self.lm = CLLocationManager()
@@ -78,9 +99,34 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         latitude = newLocation.coordinate.latitude
         longitude = newLocation.coordinate.longitude
         lm.stopUpdatingLocation()
+        
         println(latitude)
         println(longitude)
         println("Success!")
+        //お気に入りボタン
+        fav.lon = self.longitude
+        fav.lat = self.latitude
+        fav.address = self.addressLabel.text
+        
+        //シリアライズ
+        var dataFav : NSData = NSKeyedArchiver.archivedDataWithRootObject(fav)
+        
+        let ud = NSUserDefaults.standardUserDefaults()
+        
+        var favArray : Array<NSData>? = ud.objectForKey("fav") as? Array<NSData>
+        if favArray == nil {
+            favArray = Array<NSData>()
+        }
+        
+        if contains(favArray!, dataFav) == false{
+            var buttonImage = UIImage(named: "star.png")
+            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+        }else if contains(favArray!, dataFav) == true{
+            var buttonImage = UIImage(named: "star2.gif")
+            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+        }
+        
+        self.favoriteBtn.addTarget(self, action: "btn_click:", forControlEvents:.TouchUpInside)
 //        makeDate()
         var weatherMakeData = WeatherMakeData()
         weatherMakeData.lat = self.lat
@@ -105,28 +151,6 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         println(error)
     }
     
-    
-//    func roadView(){
-//        if self.weather == "Rain"{
-//            self.myImageView.image = UIImage(named: "rain.png")
-//        }else if self.weather == "Clouds"{
-//            self.myImageView.image = UIImage(named: "clouds.png")
-//        }else if self.weather == "Clear"{
-//            self.myImageView.image = UIImage(named: "clear.png")
-//        }else if self.weather == "Thunderstorm"{
-//            self.myImageView.image = UIImage(named:"thunderstorm.png")
-//        }
-//        var tempDouble = atof(self.temp!)
-//        var t = tempDouble - 273
-//        var maxDouble = atof(self.temp_max!)
-//        var max = maxDouble - 273
-//        var minDouble = atof(self.temp_min!)
-//        var min = minDouble - 273
-//        self.tempLabel.text = String("\(t)")
-//        self.maxLabel.text = String("\(max)")
-//        self.minLabel.text = String("\(min)")
-//        self.weatherLabel.text = self.weather!
-//    }
     
     
     //逆ジオコーディング
@@ -163,49 +187,10 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         
     }
     
-    
-//    func makeDate(){
-//        let urlString1 = "http://api.openweathermap.org/data/2.5/weather?lat="
-//        let urlString2 = "&lon="
-//        var stringLat = latitude?.description
-//        var stringLon = longitude?.description
-//        
-//        self.urlString = urlString1 + stringLat! + urlString2 + stringLon!
-//        println(urlString!)
-//        
-//        var url = NSURL(string: self.urlString!)
-//        var task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {data,response,error in
-//        
-//            var json = JSON(data: data)
-//            var weather = json["weather"][0]["main"]
-//            self.weather = "\(weather)"
-//            println(weather)
-//            
-//            var temp = json["main"]["temp"]
-//            self.temp = "\(temp)"
-//            var temp_max = json["main"]["temp_max"]
-//            self.temp_max = "\(temp_max)"
-//            var temp_min = json["main"]["temp_min"]
-//            self.temp_min = "\(temp_min)"
-//            
-//            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                self.roadView()
-//            })
-//
-//        })
-//         println("task end")
-//        
-//        task.resume()
-//        println("makeDate end")
-//        
-//    }
-//    
     //ボタン押したら
     func btn_click(sender: UIButton){
-        var fav = WeatherFav()
-        
-        fav.lon = self.lon
-        fav.lat = self.lat
+        fav.lon = self.longitude
+        fav.lat = self.latitude
         fav.address = self.addressLabel.text
         
         //シリアライズ
@@ -217,7 +202,17 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         if favArray == nil {
             favArray = Array<NSData>()
         }
-        favArray!.append(dataFav)
+        if contains(favArray!, dataFav) == false{
+            favArray!.append(dataFav)
+            var buttonImage = UIImage(named: "star2.gif")
+            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+        }else if contains(favArray!, dataFav) == true{
+            let i = find(favArray!, dataFav)
+            favArray!.removeAtIndex(i!)
+            var buttonImage = UIImage(named: "star.png")
+            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+        }
+
         
         ud.setObject(favArray!, forKey: "fav")
         ud.synchronize()

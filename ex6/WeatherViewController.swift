@@ -29,6 +29,8 @@ class WeatherViewController: UIViewController {
     var temp_max : String?
     var temp_min : String?
     
+    var datas : Array<WeatherFav> = []
+    var fav = WeatherFav()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,21 +56,9 @@ class WeatherViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        //お気に入りボタン
-        var buttonImage = UIImage(named: "star.jpg")
-        self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
-        self.favoriteBtn.addTarget(self, action: "btn_click:", forControlEvents:.TouchUpInside)
-        
-    }
 
-     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    //ボタン押したら
-    func btn_click(sender: UIButton){
-        var fav = WeatherFav()
+        
+        //お気に入りボタン
         
         fav.lon = self.x
         fav.lat = self.y
@@ -83,7 +73,47 @@ class WeatherViewController: UIViewController {
         if favArray == nil {
             favArray = Array<NSData>()
         }
-        favArray!.append(dataFav)
+        
+        if contains(favArray!, dataFav) == false{
+            var buttonImage = UIImage(named: "star.png")
+            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+        }else if contains(favArray!, dataFav) == true{
+            var buttonImage = UIImage(named: "star2.gif")
+            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+        }
+        
+        self.favoriteBtn.addTarget(self, action: "btn_click:", forControlEvents:.TouchUpInside)
+        
+    }
+
+     override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //ボタン押したら
+    func btn_click(sender: UIButton){
+        //シリアライズ
+        var dataFav : NSData = NSKeyedArchiver.archivedDataWithRootObject(fav)
+        
+        let ud = NSUserDefaults.standardUserDefaults()
+        
+        var favArray : Array<NSData>? = ud.objectForKey("fav") as? Array<NSData>
+        if favArray == nil {
+            favArray = Array<NSData>()
+        }
+        
+        if contains(favArray!, dataFav) == false{
+            favArray!.append(dataFav)
+            var buttonImage = UIImage(named: "star2.gif")
+            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+        }else if contains(favArray!, dataFav) == true{
+            let i = find(favArray!, dataFav)
+            favArray!.removeAtIndex(i!)
+            var buttonImage = UIImage(named: "star.png")
+            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+        }
+        
         
         ud.setObject(favArray!, forKey: "fav")
         ud.synchronize()
