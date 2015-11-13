@@ -80,30 +80,32 @@ class NextViewController: UIViewController,CLLocationManagerDelegate {
         print(latitude)
         print(longitude)
         print("Success!")
-        //お気に入りボタン
-        fav.lon = self.longitude
-        fav.lat = self.latitude
-        fav.address = self.addressLabel.text
+//        //お気に入りボタン
+//        fav.lon = self.longitude
+//        fav.lat = self.latitude
+//        fav.address = self.addressLabel.text
+//        
+//        //シリアライズ
+//        let dataFav : NSData = NSKeyedArchiver.archivedDataWithRootObject(fav)
+//        
+//        let ud = NSUserDefaults.standardUserDefaults()
+//        
+//        var favArray : Array<NSData>? = ud.objectForKey("fav") as? Array<NSData>
+//        if favArray == nil {
+//            favArray = Array<NSData>()
+//        }
+//        
+//        if favArray!.contains(dataFav) == false{
+//            let buttonImage = UIImage(named: "star.png")
+//            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+//        }else if favArray!.contains(dataFav) == true{
+//            let buttonImage = UIImage(named: "star2.gif")
+//            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
+//        }
+//        
+//        self.favoriteBtn.addTarget(self, action: "btn_click:", forControlEvents:.TouchUpInside)
         
-        //シリアライズ
-        let dataFav : NSData = NSKeyedArchiver.archivedDataWithRootObject(fav)
         
-        let ud = NSUserDefaults.standardUserDefaults()
-        
-        var favArray : Array<NSData>? = ud.objectForKey("fav") as? Array<NSData>
-        if favArray == nil {
-            favArray = Array<NSData>()
-        }
-        
-        if favArray!.contains(dataFav) == false{
-            let buttonImage = UIImage(named: "star.png")
-            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
-        }else if favArray!.contains(dataFav) == true{
-            let buttonImage = UIImage(named: "star2.gif")
-            self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
-        }
-        
-        self.favoriteBtn.addTarget(self, action: "btn_click:", forControlEvents:.TouchUpInside)
 //        makeDate()
         let weatherMakeData = WeatherMakeData()
         weatherMakeData.lat = self.lat

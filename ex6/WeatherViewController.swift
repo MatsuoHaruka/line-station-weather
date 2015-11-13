@@ -73,9 +73,11 @@ class WeatherViewController: UIViewController {
         
         if favArray!.contains(dataFav) == false{
             let buttonImage = UIImage(named: "star.png")
+            self.favoriteBtn.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
             self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
         }else if favArray!.contains(dataFav) == true{
             let buttonImage = UIImage(named: "star2.gif")
+            self.favoriteBtn.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
             self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
         }
         
@@ -103,11 +105,13 @@ class WeatherViewController: UIViewController {
         if favArray!.contains(dataFav) == false{
             favArray!.append(dataFav)
             let buttonImage = UIImage(named: "star2.gif")
+            self.favoriteBtn.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
             self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
         }else if favArray!.contains(dataFav) == true{
             let i = favArray!.indexOf(dataFav)
             favArray!.removeAtIndex(i!)
             let buttonImage = UIImage(named: "star.png")
+            self.favoriteBtn.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
             self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
         }
         
