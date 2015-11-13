@@ -25,11 +25,11 @@ class FavoriteTableViewController: UITableViewController {
         
         let ud = NSUserDefaults.standardUserDefaults()
         
-        var favArray : Array<NSData>? = ud.objectForKey("fav") as? Array<NSData>
+        let favArray : Array<NSData>? = ud.objectForKey("fav") as? Array<NSData>
         
         if let favArrayUnwrapp : Array<NSData> = favArray {
             for data in favArrayUnwrapp {
-                var fav : WeatherFav = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! WeatherFav
+                let fav : WeatherFav = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! WeatherFav
                 self.datas.append(fav)
             }
         }
@@ -77,9 +77,9 @@ class FavoriteTableViewController: UITableViewController {
         self.selectedAddress = datas[indexPath.row].address
         self.selectedLat = datas[indexPath.row].lat
         self.selectedLon = datas[indexPath.row].lon
-        println(self.selectedLat)
-        println(self.selectedLon)
-        println(self.selectedAddress)
+        print(self.selectedLat)
+        print(self.selectedLon)
+        print(self.selectedAddress)
         performSegueWithIdentifier("toFavoriteViewController", sender: nil)
         
         

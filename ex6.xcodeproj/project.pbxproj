@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67EF5A69CEBB698533001FA9 /* Pods_ex6.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B64A76023EC501BA56CA27 /* Pods_ex6.framework */; };
 		6E01E66F1B5F610100CBC13B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E01E66E1B5F610100CBC13B /* WeatherViewController.swift */; };
 		6E0CF5E01B720936008DAE5E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CF5DF1B720936008DAE5E /* HomeViewController.swift */; };
 		6E0CF5E21B720951008DAE5E /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CF5E11B720951008DAE5E /* NextViewController.swift */; };
@@ -18,7 +19,6 @@
 		6E1B1D751B4381BF004797A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1B1D741B4381BF004797A6 /* Images.xcassets */; };
 		6E1B1D781B4381BF004797A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1B1D761B4381BF004797A6 /* LaunchScreen.xib */; };
 		6E1B1D841B4381BF004797A6 /* ex6Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1D831B4381BF004797A6 /* ex6Tests.swift */; };
-		6E1B1DF31B43986E004797A6 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B1DF21B43986E004797A6 /* SwiftyJSON.swift */; };
 		6E44EB741B56584100F02089 /* TrainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E44EB731B56584100F02089 /* TrainTableViewController.swift */; };
 		6E49BD431B96EF19009561FB /* WeatherMakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E49BD421B96EF19009561FB /* WeatherMakeData.swift */; };
 		6E49BD451B9FC00F009561FB /* thunderstorm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E49BD441B9FC00F009561FB /* thunderstorm.png */; };
@@ -31,7 +31,6 @@
 		6EEBB6291B43E88700D2B143 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEBB6261B43E88700D2B143 /* clouds.png */; };
 		6EEBB62A1B43E88700D2B143 /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEBB6271B43E88700D2B143 /* rain.png */; };
 		6EEBB62C1B4585CC00D2B143 /* weatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEBB62B1B4585CC00D2B143 /* weatherCell.swift */; };
-		DB2E7A99B22E9A1989290261 /* libPods-ex6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14914A4EC2369A556D93F14E /* libPods-ex6.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14914A4EC2369A556D93F14E /* libPods-ex6.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ex6.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16524E5A75FB8D1F4AE65321 /* Pods-ex6.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ex6.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ex6/Pods-ex6.debug.xcconfig"; sourceTree = "<group>"; };
 		6E01E66E1B5F610100CBC13B /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		6E0CF5DF1B720936008DAE5E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 		6E1B1D7D1B4381BF004797A6 /* ex6Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ex6Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1B1D821B4381BF004797A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E1B1D831B4381BF004797A6 /* ex6Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ex6Tests.swift; sourceTree = "<group>"; };
-		6E1B1DF21B43986E004797A6 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		6E3FED491B564E6100DCCA4D /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		6E44EB731B56584100F02089 /* TrainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTableViewController.swift; sourceTree = "<group>"; };
 		6E49BD421B96EF19009561FB /* WeatherMakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherMakeData.swift; sourceTree = "<group>"; };
@@ -76,6 +73,7 @@
 		6EEBB6261B43E88700D2B143 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
 		6EEBB6271B43E88700D2B143 /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
 		6EEBB62B1B4585CC00D2B143 /* weatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weatherCell.swift; sourceTree = "<group>"; };
+		B5B64A76023EC501BA56CA27 /* Pods_ex6.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ex6.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED02908D69CBFF1B4F9466F1 /* Pods-ex6.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ex6.release.xcconfig"; path = "Pods/Target Support Files/Pods-ex6/Pods-ex6.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB2E7A99B22E9A1989290261 /* libPods-ex6.a in Frameworks */,
+				67EF5A69CEBB698533001FA9 /* Pods_ex6.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,16 +131,15 @@
 				6E0CF5EB1B7B3B3E008DAE5E /* FavoriteViewController.swift */,
 				6EEB81BE1B843747009B94AC /* FavoriteTableViewController.swift */,
 				6E1B1D711B4381BF004797A6 /* Main.storyboard */,
-				6E1B1D741B4381BF004797A6 /* Images.xcassets */,
 				6E1B1D761B4381BF004797A6 /* LaunchScreen.xib */,
-				6E1B1DF21B43986E004797A6 /* SwiftyJSON.swift */,
-				6EEBB6251B43E88700D2B143 /* clear.png */,
+				6E1B1D741B4381BF004797A6 /* Images.xcassets */,
 				6EEBB6261B43E88700D2B143 /* clouds.png */,
 				6EEBB6271B43E88700D2B143 /* rain.png */,
-				6E49BD441B9FC00F009561FB /* thunderstorm.png */,
 				6EB542591BA02BE70080B62C /* star.png */,
-				6EB5425A1BA02BE70080B62C /* star2.gif */,
 				6E49BD461B9FC023009561FB /* star.jpg */,
+				6EB5425A1BA02BE70080B62C /* star2.gif */,
+				6E49BD441B9FC00F009561FB /* thunderstorm.png */,
+				6EEBB6251B43E88700D2B143 /* clear.png */,
 				6E1B1D6B1B4381BF004797A6 /* Supporting Files */,
 				6E3FED491B564E6100DCCA4D /* Header.h */,
 				6E49BD481B9FFC3C009561FB /* sample.storyboard */,
@@ -187,7 +184,7 @@
 		E45678EB7E7A49FD337713ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				14914A4EC2369A556D93F14E /* libPods-ex6.a */,
+				B5B64A76023EC501BA56CA27 /* Pods_ex6.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,6 +201,7 @@
 				6E1B1D651B4381BF004797A6 /* Frameworks */,
 				6E1B1D661B4381BF004797A6 /* Resources */,
 				6FAD3CAEEAFF115FC0B1A13C /* Copy Pods Resources */,
+				04963CA820DA8B2D61410E1F /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,7 +236,8 @@
 		6E1B1D601B4381BF004797A6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = HARUKA;
 				TargetAttributes = {
 					6E1B1D671B4381BF004797A6 = {
@@ -299,6 +298,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04963CA820DA8B2D61410E1F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ex6/Pods-ex6-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6FAD3CAEEAFF115FC0B1A13C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,7 +361,6 @@
 				6E49BD431B96EF19009561FB /* WeatherMakeData.swift in Sources */,
 				6E0CF5E41B720A1C008DAE5E /* NextTrainTableViewController.swift in Sources */,
 				6E0CF5E01B720936008DAE5E /* HomeViewController.swift in Sources */,
-				6E1B1DF31B43986E004797A6 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +430,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -482,6 +496,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ex6/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haruka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = ex6/Header.h;
 			};
@@ -495,6 +510,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ex6/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haruka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = ex6/Header.h;
 			};
@@ -514,6 +530,7 @@
 				);
 				INFOPLIST_FILE = ex6Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haruka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ex6.app/ex6";
 			};
@@ -529,6 +546,7 @@
 				);
 				INFOPLIST_FILE = ex6Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haruka.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ex6.app/ex6";
 			};

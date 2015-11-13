@@ -11,14 +11,13 @@ import UIKit
 class WeatherViewController: UIViewController {
     
     @IBOutlet weak var favoriteBtn: UIButton!
-    
     @IBOutlet weak var station: UINavigationItem!
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var watherLabel: UILabel!
-    
     @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
+    
     var line :String?
     var x : Double?
     var y : Double?
@@ -32,11 +31,11 @@ class WeatherViewController: UIViewController {
     var datas : Array<WeatherFav> = []
     var fav = WeatherFav()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        makeDate()
         
-        var weatherMakeData = WeatherMakeData()
+        let weatherMakeData = WeatherMakeData()
         weatherMakeData.lat = self.y
         weatherMakeData.lon = self.x
         weatherMakeData.address = self.line
@@ -47,16 +46,14 @@ class WeatherViewController: UIViewController {
             self.minLabel.text = weatherMakeData.min.description
             self.tempLabel.text = weatherMakeData.t.description
             
-            var image : String = weatherMakeData.imageName
+            let image : String = weatherMakeData.imageName
             self.myImageView.image = UIImage(named: image)
         }
 
         
         station.title = self.line
 
-        // Do any additional setup after loading the view.
-        
-
+        // Do any additional setup after loading the view.s,Hd
         
         //お気に入りボタン
         
@@ -65,7 +62,7 @@ class WeatherViewController: UIViewController {
         fav.address = self.line
         
         //シリアライズ
-        var dataFav : NSData = NSKeyedArchiver.archivedDataWithRootObject(fav)
+        let dataFav : NSData = NSKeyedArchiver.archivedDataWithRootObject(fav)
         
         let ud = NSUserDefaults.standardUserDefaults()
         
@@ -74,11 +71,11 @@ class WeatherViewController: UIViewController {
             favArray = Array<NSData>()
         }
         
-        if contains(favArray!, dataFav) == false{
-            var buttonImage = UIImage(named: "star.png")
+        if favArray!.contains(dataFav) == false{
+            let buttonImage = UIImage(named: "star.png")
             self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
-        }else if contains(favArray!, dataFav) == true{
-            var buttonImage = UIImage(named: "star2.gif")
+        }else if favArray!.contains(dataFav) == true{
+            let buttonImage = UIImage(named: "star2.gif")
             self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
         }
         
@@ -94,7 +91,7 @@ class WeatherViewController: UIViewController {
     //ボタン押したら
     func btn_click(sender: UIButton){
         //シリアライズ
-        var dataFav : NSData = NSKeyedArchiver.archivedDataWithRootObject(fav)
+        let dataFav : NSData = NSKeyedArchiver.archivedDataWithRootObject(fav)
         
         let ud = NSUserDefaults.standardUserDefaults()
         
@@ -103,14 +100,14 @@ class WeatherViewController: UIViewController {
             favArray = Array<NSData>()
         }
         
-        if contains(favArray!, dataFav) == false{
+        if favArray!.contains(dataFav) == false{
             favArray!.append(dataFav)
-            var buttonImage = UIImage(named: "star2.gif")
+            let buttonImage = UIImage(named: "star2.gif")
             self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
-        }else if contains(favArray!, dataFav) == true{
-            let i = find(favArray!, dataFav)
+        }else if favArray!.contains(dataFav) == true{
+            let i = favArray!.indexOf(dataFav)
             favArray!.removeAtIndex(i!)
-            var buttonImage = UIImage(named: "star.png")
+            let buttonImage = UIImage(named: "star.png")
             self.favoriteBtn.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
         }
         

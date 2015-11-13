@@ -24,7 +24,7 @@ class FavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var weatherMakeData = WeatherMakeData()
+        let weatherMakeData = WeatherMakeData()
         weatherMakeData.lat = self.lat
         weatherMakeData.lon = self.lon
         weatherMakeData.address = self.address
@@ -35,7 +35,7 @@ class FavoriteViewController: UIViewController {
             self.minLabel.text = weatherMakeData.min.description
             self.tempLabel.text = weatherMakeData.t.description
             
-            var image : String = weatherMakeData.imageName
+            let image : String = weatherMakeData.imageName
             self.myImageView.image = UIImage(named: image)
         }
         

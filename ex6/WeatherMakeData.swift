@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+
 
 class WeatherMakeData: NSObject {
     
@@ -29,46 +31,62 @@ class WeatherMakeData: NSObject {
         super.init()
     }
     
+    func make(){
+        let urlString1 = "http://api.openweathermap.org/data/2.5/weather?lat="
+        let urlString2 = "&lon="
+        let stringLat = lat.description
+        let stringLon = lon.description
+        
+        let urlString = urlString1 + stringLat + urlString2 + stringLon
+        
+        
+        
+    }
+    
     func makeData(completion : () -> Void){
         
         let urlString1 = "http://api.openweathermap.org/data/2.5/weather?lat="
         let urlString2 = "&lon="
-        var stringLat = lat.description
-        var stringLon = lon.description
+        let urlString3 = "&APPID=cbcf857a1bb19b0ee0132321660fd519"
+        let stringLat = lat.description
+        let stringLon = lon.description
         
-        let urlString = urlString1 + stringLat + urlString2 + stringLon
+        let urlString = urlString1 + stringLat + urlString2 + stringLon + urlString3
         
-        var url = NSURL(string: urlString)
-        var task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {data,response,error in
+        let url = NSURL(string: urlString)
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {data,response,error in
             
-            var json = JSON(data: data)
-            var weather = json["weather"][0]["main"]
+            var json = JSON(data: data!)
+      
+            
+            let weather = json["weather"][0]["main"]
             self.weather = "\(weather)"
-            println(weather)
+            print(weather)
             
-            var temp = json["main"]["temp"]
+            let temp = json["main"]["temp"]
             self.temp = "\(temp)"
-            var temp_max = json["main"]["temp_max"]
+            let temp_max = json["main"]["temp_max"]
             self.temp_max = "\(temp_max)"
-            var temp_min = json["main"]["temp_min"]
+            let temp_min = json["main"]["temp_min"]
             self.temp_min = "\(temp_min)"
             
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () ->  Void in
                 self.roadView()
                 completion()
             })
             
         })
-        println("task end")
+     
+        print("task end")
         
         task.resume()
-        println("makeDate end")
+        print("makeDate end")
 
         
     }
     
     func roadView(){
-        
+        print(self.weather)
         if self.weather == "Rain"{
         self.imageName = "rain.png"
         }else if self.weather == "Clouds"{
@@ -79,14 +97,15 @@ class WeatherMakeData: NSObject {
         self.imageName = "thunderstorm.png"
         }
 
-        var tempDouble = atof(self.temp!)
+        let tempDouble = atof(self.temp!)
         self.t = tempDouble - 273
-        var maxDouble = atof(self.temp_max!)
+        let
+        maxDouble = atof(self.temp_max!)
         self.max = maxDouble - 273
-        var minDouble = atof(self.temp_min!)
+        let minDouble = atof(self.temp_min!)
         self.min = minDouble - 273
-        println(self.max)
-        println("roadView end")
+        print(self.max)
+        print("roadView end")
         
     }
    

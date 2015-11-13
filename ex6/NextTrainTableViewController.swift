@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import AFNetworking
 
 class NextTrainTableViewController: UITableViewController {
     
@@ -39,26 +41,26 @@ class NextTrainTableViewController: UITableViewController {
         let urlstring1 = "http://express.heartrails.com/api/json?method=getStations&line="
         let urlstring2 = "\(line!)"
         self.urlString = urlstring1 + urlstring2.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-        println(self.urlString!)
+        print(self.urlString!)
         
         manager.GET(self.urlString!, parameters: nil,
             success: {(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) in
-                println("success!!")
-                println(responsobject)
+                print("success!!")
+                print(responsobject)
                 
                 let dic : NSDictionary = responsobject as! NSDictionary
                 
                 self.array = dic.objectForKey("response")?.objectForKey("station") as! Array
                 
                 
-                println(self.array)
+                print(self.array)
                 
                 self.myTableView.reloadData()
                 
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
-                println("Error!!")
-                println(self.urlString!)
+                print("Error!!")
+                print(self.urlString!)
         })
 
     }
@@ -105,7 +107,7 @@ class NextTrainTableViewController: UITableViewController {
         // 取得した駅を選択した駅に代入
         
         // 次の画面へ遷移する
-        println(stationX)
+        print(stationX)
         
         selectedStation = self.array[indexPath.row].objectForKey("name") as? String
         self.selectedX = self.array[indexPath.row].objectForKey("x") as? Double
@@ -163,8 +165,8 @@ class NextTrainTableViewController: UITableViewController {
             weatherViewController.line = selectedStation
             weatherViewController.x = selectedX
             weatherViewController.y = selectedY
-            println(self.line!)
-            println(self.selectedStation!)
+            print(self.line!)
+            print(self.selectedStation!)
         }
 
     }

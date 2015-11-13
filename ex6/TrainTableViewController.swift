@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import AFNetworking
 
 class TrainTableViewController: UITableViewController {
     
@@ -29,7 +31,7 @@ class TrainTableViewController: UITableViewController {
         
         manager.GET("http://express.heartrails.com/api/json?method=getLines&area=%E9%96%A2%E6%9D%B1", parameters: nil,
             success: {(operation: AFHTTPRequestOperation!, responsobject: AnyObject!) in
-                println("success!!")
+                print("success!!")
                 
                 let dic : NSDictionary = responsobject as! NSDictionary
                 
@@ -39,7 +41,7 @@ class TrainTableViewController: UITableViewController {
                 
             },
             failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
-                println("Error!!")})
+                print("Error!!")})
 
     }
 
@@ -59,7 +61,7 @@ class TrainTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        println(self.array.count)
+        print(self.array.count)
         return self.array.count
     }
 
